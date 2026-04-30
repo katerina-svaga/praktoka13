@@ -4,26 +4,30 @@
   position: absolute;
   overflow: hidden;
 }  
-
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&display=swap");
-@layer reset, tokens, base, layout, cube, ui, cards, reveal, theme, responsive;
-
-@layer reset {
+@id486809034 (@layer) reset, tokens, base, layout, cube, ui, cards, reveal, theme, responsive;
+@id486809034 (@layer) reset {
 
   *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-}
 
-@layer tokens {
+  *::before,
+
+  *::after {
+
+    box-sizing: border-box;
+
+    margin: 0;
+
+    padding: 0;
+
+  }
+
+}
+@id486809034 (@layer) tokens {
 
   :root {
-    color-scheme: light;
 
+    color-scheme: light;
     --dark-bg: #1c1814;
     --dark-fg: #ede8df;
     --dark-muted: #8a7b6e;
@@ -46,24 +50,27 @@
     --reveal-offset: 0.625rem;
     --reveal-duration: 0.5s;
     --z-ui: 10;
+
   }
+
 }
+@id486809034 (@layer) base {
 
-
-@layer base {
   html {
     color-scheme: light;
+
   }
 
   body {
+
     font-family: var(--font-mono);
     overflow-x: hidden;
     transition: background 0.3s ease, color 0.3s ease;
-    background: url('https://raw.githubusercontent.com/katerina-svaga/praktoka13/refs/heads/main/i.webp');
+    background: url('https://raw.githubusercontent.com/katerina-svaga/praktoka13/refs/heads/main/i.webp
   }
-}
 
-@layer layout {
+}
+(@layer) layout {
   #scene {
     position: fixed;
     inset: 0;
@@ -73,13 +80,14 @@
     justify-content: center;
     perspective: 1100px;
     pointer-events: none;
+
   }
 
   #scroll_container {
     position: relative;
     margin-left: -250px;
     z-index: 999;
-
+    
   }
 
   section {
@@ -87,11 +95,12 @@
     display: flex;
     align-items: center;
     padding: 6rem calc(5rem + var(--ui-inset)) 6rem 5rem;
+
   }
+
 }
+(@layer) cube {
 
-
-@layer cube {
   #cube {
     --s: min(74vw, 74vh, 560px);
     width: var(--s);
@@ -100,6 +109,7 @@
     transform-style: preserve-3d;
     transform: rotateX(90deg) rotateY(0deg);
     will-change: transform;
+
   }
 
   .face {
@@ -107,19 +117,22 @@
     inset: 0;
     overflow: hidden;
     backface-visibility: hidden;
-
     img {
+
       position: absolute;
       inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
+
     }
 
     &:has(img) .face-ph {
       display: none;
+
     }
+
   }
 
   .face-ph {
@@ -132,31 +145,41 @@
     color: white;
     pointer-events: none;
     user-select: none;
+
   }
 
   .face[data-face="front"] {
     transform: translateZ(calc(var(--s) / 2));
   }
+
   .face[data-face="back"] {
     transform: rotateY(180deg) translateZ(calc(var(--s) / 2));
+
   }
+
   .face[data-face="right"] {
     transform: rotateY(90deg) translateZ(calc(var(--s) / 2));
+
   }
+
   .face[data-face="left"] {
     transform: rotateY(-90deg) translateZ(calc(var(--s) / 2));
+
   }
+
   .face[data-face="top"] {
     transform: rotateX(-90deg) translateZ(calc(var(--s) / 2));
+
   }
+
   .face[data-face="bottom"] {
     transform: rotateX(90deg) translateZ(calc(var(--s) / 2));
+
   }
+
 }
+(@layer) ui {
 
-9) Миксин с заполняемым прогресс-баром вверху. В классе progress-fill используйте свой цвет:
-
-@layer ui {
   #upbar {
     position: fixed;
     top: var(--ui-inset);
@@ -167,7 +190,6 @@
     letter-spacing: 0.15em;
     color: var(--muted);
     text-transform: uppercase;
-
     .progress-bar {
       width: 7.5rem;
       height: var(--hairline);
@@ -176,6 +198,7 @@
       margin-inline-start: auto;
       position: relative;
       overflow: hidden;
+
     }
 
     .progress-fill {
@@ -183,19 +206,21 @@
       inset-block: 0;
       inset-inline-start: 0;
       width: 0%;
-      background: #7abdff;
-      transition: width 0.1s linear;
-    }
+      background: #E0FFFF;
+      transition:
 
+
+width 0.1s linear;
+
+    }
     .scene-label {
       font-size: 0.6rem;
-      color: var(--accent);
+color: var(--accent);
       margin-block-start: 0.4rem;
     }
+
   }
-
-
-  #face_caption {
+#face_caption {
     position: fixed;
     bottom: var(--ui-inset);
     left: 50%;
@@ -204,6 +229,7 @@
     text-align: center;
     pointer-events: none;
     user-select: none;
+
   }
 
   #face_caption_num {
@@ -212,6 +238,7 @@
     color: var(--accent);
     text-transform: uppercase;
     margin-block-end: 0.15rem;
+
   }
 
   #face_caption_name {
@@ -220,12 +247,12 @@
     letter-spacing: 0.08em;
     color: white;
     line-height: 1;
-  }
 
-#left-text {
+  }
+  #left-text {
     position: fixed;
-    left: -12%;
-    top: 40%;
+    left: -5%;
+    top: 50%;
     transform: translateY(-50%) rotate(-90deg);
     transform-origin: right center;
     z-index: var(--z-ui);
@@ -234,19 +261,22 @@
     letter-spacing: 0.15em;
     text-transform: uppercase;
 
+  
+
   a {
+
       color: var(--muted);
       text-decoration: none;
+
     }  
 
 }
 
 } 
-
 #right-text {
     position: fixed;
-    right: 5%;
-    top: 65%;
+    right: 2%;
+    top: 50%;
     transform: translateY(50%) rotate(90deg);
     transform-origin: right center;
     z-index: var(--z-ui);
@@ -254,273 +284,471 @@
     font-size: 0.65rem;
     letter-spacing: 0.15em;
     text-transform: uppercase;
+
 }
+(@layer) cards {
 
-
-@layer cards {
   .text-card {
     max-width: 23.75rem;
     padding: 2.25rem 2rem;
     background: var(--card-bg);
     border-left: var(--hairline) solid var(--card-border);
+
     backdrop-filter: blur(6px) saturate(120%);
+
     -webkit-backdrop-filter: blur(6px) saturate(120%);
+
     overflow: hidden;
+
     transition: background 0.3s ease, border-color 0.3s ease;
 
     &.right {
+
       margin-inline-start: auto;
+
       border-left: none;
+
       border-right: var(--hairline) solid var(--card-border);
+
       text-align: right;
+
     }
 
     &.center {
-      margin-inline: auto;
-      border-left: none;
-      border-top: var(--hairline) solid var(--card-border);
-      text-align: center;
-      max-width: 28.75rem;
-    }
-  }
 
+      margin-inline: auto;
+
+      border-left: none;
+
+      border-top: var(--hairline) solid var(--card-border);
+
+      text-align: center;
+
+      max-width: 28.75rem;
+
+    }
+
+  }
   .tag {
+
     font-size: 0.6rem;
+
     letter-spacing: 0.25em;
+
     text-transform: uppercase;
+
     color: var(--accent);
+
     margin-block-end: 1.1rem;
+
   }
 
   :where(h1, h2) {
+
     font-family: var(--font-display);
+
     font-weight: 400;
+
     letter-spacing: 0.03em;
+
     line-height: 0.92;
+
   }
 
   h1 {
+
     font-size: clamp(3rem, 8vw, 6.5rem);
+
   }
+
   h2 {
+
     font-size: clamp(2.2rem, 5vw, 4rem);
-  }
 
+  }
   .body-text {
-    font-size: 0.78rem;
-    line-height: 1.8;
-    color: black;
-    margin-block-start: 1.25rem;
-  }
 
-  .button-row {
+    font-size: 0.78rem;
+
+    line-height: 1.8;
+
+    color: black;
+
+    margin-block-start: 1.25rem;
+
+  }
+   .button-row {
+
     display: flex;
+
     align-items: center;
+
     justify-content: flex-start;
+
     gap: 0.75rem;
+
     margin-block-start: 1.75rem;
+
   }
 
   .text-card.right .button-row {
+
     justify-content: flex-end;
+
   }
 
   .button {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 0.6rem;
+
     padding: 0.6rem 1.25rem;
+
     border: var(--hairline) solid var(--accent);
+
     color: var(--accent);
+
     font-family: var(--font-mono);
+
     font-size: 0.62rem;
+
     letter-spacing: 0.18em;
+
     text-transform: uppercase;
+
     text-decoration: none;
+  
+  color: black
+
     cursor: pointer;
+
     transition: background 0.2s, color 0.2s;
 
     &:hover {
+
       background: var(--accent);
+
       color: var(--bg);
+
     }
 
     svg {
+
       width: 0.6875rem;
+
       height: 0.6875rem;
+
     }
+
   }
 
   .button-back {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 0.6rem;
+
     padding: 0.6rem 1.25rem;
+
     border: var(--hairline) solid
+
       color-mix(in srgb, var(--muted) 45%, transparent);
+
     color: var(--muted);
+
     font-family: var(--font-mono);
+
     font-size: 0.62rem;
+
     letter-spacing: 0.18em;
+
     text-transform: uppercase;
+
     text-decoration: none;
+  
+  color: black
+
     transition: background 0.2s, color 0.2s, border-color 0.2s;
 
     &:hover {
-      background: color-mix(in srgb, var(--muted) 12%, transparent);
+
+      background: color-mix(in srgb,
+
+
+
+
+
+var(--muted) 12%, transparent);
+
       border-color: var(--muted);
+
       color: var(--fg);
+
     }
 
     svg {
-      width: 0.6875rem;
-      height: 0.6875rem;
-    }
-  }
-}
 
-@layer reveal {
+      width: 0.6875rem;
+
+height: 0.6875rem;
+
+    }
+
+  }
+
+}
+@id486809034 (@layer) reveal {
+
   :is(.tag, h1, h2, .body-text, .button, .button-back) {
+
     opacity: 0;
+
     translate: 0 var(--reveal-offset);
+
   }
 
   :is(h1, h2) {
+
     translate: 0 1.125rem;
+
     transition: opacity var(--reveal-duration) ease 0.08s,
+
       translate var(--reveal-duration) ease 0.08s;
+
   }
 
   .tag {
+
     transition: opacity var(--reveal-duration) ease,
+
       translate var(--reveal-duration) ease;
+
   }
 
   .body-text {
+
     transition: opacity var(--reveal-duration) ease 0.2s,
+
       translate var(--reveal-duration) ease 0.2s;
+
   }
 
   :is(.button, .button-back) {
+
     transition: opacity var(--reveal-duration) ease 0.35s,
+
       translate var(--reveal-duration) ease 0.35s, background 0.2s, color 0.2s,
+
       border-color 0.2s;
+
   }
 
   :is(.tag, h1, h2, .body-text, .button, .button-back).visible {
-    opacity: 1;
-    translate: 0 0;
-  }
-}
 
-@layer theme {
+    opacity: 1;
+
+    translate: 0 0;
+
+  }
+
+}
+@id486809034 (@layer) theme {
+
   :root {
+
     color-scheme: light;
+
     --bg: var(--light-bg);
+
     --fg: var(--light-fg);
+
     --muted: var(--light-muted);
+
     --accent: var(--accent-light);
+
     --card-bg: rgba(240, 236, 227, 0.08);
+
     --card-border: rgba(58, 110, 0, 0.14);
 
     .face {
+
       background: repeating-linear-gradient(
+
           0deg,
+
           rgba(0, 0, 0, 0.05) 0,
+
           rgba(0, 0, 0, 0.05) 1px,
+
           transparent 1px,
+
           transparent 48px
+
         ),
+
         repeating-linear-gradient(
+
           90deg,
+
           rgba(0, 0, 0, 0.05) 0,
+
           rgba(0, 0, 0, 0.05) 1px,
+
           transparent 1px,
+
           transparent 48px
+
         ),
+
         #ddd8cf;
+
     }
 
     .face-ph {
+
       color: rgba(0, 0, 0, 0.07);
+
     }
+
     }
 
     #face_caption_name {
-      opacity: 0.35;
-    }
-  }
-}
 
-@layer responsive {
-  @media (width <= 56.25em) { 
+      opacity: 0.35;
+
+    }
+
+  }
+
+}
+@id486809034 (@layer) responsive {
+
+  width <= 56.25em { 
+
     #upbar {
+
       top: 1rem;
+
       right: 1rem;
+
     }
 
     #scene_strip {
+
       display: none;
+
     }
 
+    
+
      #left-text {
+
       display: none;
+
     }
+
+    
+
     #right-text {
+
      display: none;
+
     }
 
     #theme_toggle {
+
       bottom: 1rem;
+
       left: 1.25rem;
+
       translate: 0 0;
+
     }
 
     #face_caption {
+
       bottom: 1rem;
+
     }
 
     section {
+
       min-height: 150vh;
+
       align-items: flex-end;
+
       padding: 0 1.5rem 3.5rem;
+
     }
 
     #s0 {
+
       min-height: 100vh;
+
       align-items: center;
+
       padding: 4rem 1.5rem;
+
     }
 
     :is(.text-card, .text-card.right, .text-card.center) {
+
       max-width: 100%;
+
       padding: 1.5rem 1.25rem;
+
     }
 
     .body-text {
+
       line-height: 1.55;
+
     }
 
     .button-row {
-      margin-block-start: 1.25rem;
-    }
-  }
-} 
 
+      margin-block-start: 1.25rem;
+
+    }
+
+  }
+
+}
 #s0 {
+
 position: relative;
+
 margin-left: 100px;
+
 z-index: 9999;
+
   }
+
   
+
 #s2 {
+
 position: relative;
+
 margin-left: 100px;
+
 z-index: 9999;
+
   }
+
+  
 
 #s4 {
+
 position: relative;
+
 margin-left: 100px;
+
 z-index: 9999;
+
   }
