@@ -1,22 +1,32 @@
 const IMAGE_SRCS = [
 
-  "https://raw.githubusercontent.com/katerina-svaga/praktoka13/refs/heads/main/5d68cd458742be259d7e975e3e3c216e.jpg",
-  "https://raw.githubusercontent.com/katerina-svaga/praktoka13/refs/heads/main/1aa5de8dfed53225aae18fed10440143.jpg",
-  "https://raw.githubusercontent.com/katerina-svaga/praktoka13/refs/heads/main/5c60fda74f2d9da5e8f45aa84316b4af_webp.jpg",
-  "https://raw.githubusercontent.com/katerina-svaga/praktoka13/refs/heads/main/10b239690c2a68a2a1cd917a84b9c7a1.jpg",
-  "https://raw.githubusercontent.com/katerina-svaga/praktoka13/refs/heads/main/e77c6a0fce97f0dd06503a2cf5edb93c_webp.jpg",
-  "https://raw.githubusercontent.com/katerina-svaga/praktoka13/refs/heads/main/9aa9244985fee4bcf50b37770d79c159_webp.jpg"
+  "https://raw.githubusercontent.com/Lizaveta-sketch/haha/refs/heads/main/Kate/X1.jpg&quot;,
+
+  "https://raw.githubusercontent.com/Lizaveta-sketch/haha/refs/heads/main/Kate/X2.jpg&quot;,
+
+  "https://raw.githubusercontent.com/Lizaveta-sketch/haha/refs/heads/main/Kate/X3.jpg&quot;,
+
+  "https://raw.githubusercontent.com/Lizaveta-sketch/haha/refs/heads/main/Kate/X4.jpg&quot;,
+
+  "https://raw.githubusercontent.com/Lizaveta-sketch/haha/refs/heads/main/Kate/X5.jpg&quot;,
+
+  "https://raw.githubusercontent.com/Lizaveta-sketch/haha/refs/heads/main/Kate/X6.jpg&quot;
 
 ];
 const IMAGE_ASPECTS = [1, 1, 1, 1, 1, 1];
 const FACE_NAMES = [
 
-  "ХАН 1",
-  "ХАН 2",
-  "ХАН 3",
-  "ХАН 4",
-  "ХАН 5",
-  "ХАН 6"
+  "Хан Джисон",
+
+  "ТВОРЧЕСКАЯ ЛАБОРАТОРИЯ",
+
+  "ЖИВАЯ ЭНЕРГИЯ",
+
+  "СОЛЬНЫЕ РАБОТЫ",
+
+  "ФИЛОСОФИЯ МОЛОДОСТИ",
+
+  "ИСКРЕННИЙ"
 
 ];
 const SWAP_RADIUS = 3;
@@ -37,10 +47,7 @@ function buildStops(n) {
     { rx: 0, ry: 0 },
     { rx: 0, ry: -90 },
     { rx: 0, ry: -180 },
-    { r
-
-
-x: 0, ry: -270 },
+    { rx: 0, ry: -270 },
     { rx: -90, ry: -360 }
   ];
   const out = base.slice(0, Math.min(n, 6));
@@ -65,14 +72,14 @@ const dom = {
 
 for (let i = dom.scrollEl.querySelectorAll("section").length; i < N; i++) {
   const sec = document.createElement("section");
-  sec.id = s${i};
+  sec.id = `s${i}`;
   dom.scrollEl.appendChild(sec);
 }
 
 dom.strip.innerHTML = "";
 for (let i = 0; i < N; i++) {
   const a = document.createElement("a");
-  a.href = #s${i};
+  a.href = `#s${i}`;
   a.className = "scene-dot" + (i === 0 ? " active" : "");
   dom.strip.appendChild(a);
 }
@@ -138,7 +145,10 @@ const refreshFaceImages = () => {
   const snapshot = [...faceImgIdx];
   faceImgIdx.fill(-1);
   snapshot.forEach((imgIdx, faceIdx) => {
-    if (imgIdx !== -1) setFaceImage(faceIdx, imgIdx, true);
+    if (imgIdx !== -1) setFaceImage(faceIdx,
+
+
+imgIdx, true);
   });
 };
 
@@ -151,7 +161,7 @@ function checkImageSwaps(smooth) {
   for (let offset = -SWAP_RADIUS; offset <= SWAP_RADIUS; offset++) {
     if (offset === 0) continue;
     const si = base + offset;
-    if (si < 0  si >= N) continue;
+    if (si < 0 || si >= N) continue;
     setFaceImage(faceAtStop(si), si);
   }
 }
@@ -177,20 +187,15 @@ const updateUPBAR = (s) => {
 const easeIO = (t) => (t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t);
 
 const setCubeTransform = (s) => {
-  if (N < 2  STOPS.length < 2) return;
+  if (N < 2 || STOPS.length < 2) return;
   const t = s * (N - 1);
   const i = Math.min(Math.floor(t), N - 2);
   const f = easeIO(t - i);
-  const a = STO
-Verification — SecIdent
-sec.id
-
-
-PS[i];
+  const a = STOPS[i];
   const b = STOPS[i + 1];
   const rx = a.rx + (b.rx - a.rx) * f;
   const ry = a.ry + (b.ry - a.ry) * f;
-  dom.cube.style.transform = rotateX(${rx}deg) rotateY(${ry}deg);
+  dom.cube.style.transform = `rotateX(${rx}deg) rotateY(${ry}deg)`;
 };
 
 let sectionTops = [];
@@ -296,7 +301,10 @@ window.addEventListener(
     if (Math.abs(delta) < 5) return;
     stopAnchorAnim();
     velocity += delta;
-    velocity = Math.max(-600, Math.min(600, velocity));
+    velocity = Math.max(-600, Math.min(600,
+
+
+velocity));
   },
   { passive: false }
 );
@@ -357,11 +365,7 @@ let isAnchorScrolling = false;
 const stopAnchorAnim = () => {
   if (anchorAnim) {
     cancelAnimationFrame(anchorAnim);
-Performance.now
-www.dn.now
-
-
-anchorAnim = null;
+    anchorAnim = null;
   }
   isAnchorScrolling = false;
 };

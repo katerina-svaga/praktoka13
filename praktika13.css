@@ -1,8 +1,13 @@
 .box {
+
   width: 110%;
+
   padding: 40px;
+
   position: absolute;
+
   overflow: hidden;
+
 }  
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400&display=swap");
 @id486809034 (@layer) reset, tokens, base, layout, cube, ui, cards, reveal, theme, responsive;
@@ -23,40 +28,63 @@
   }
 
 }
-@id486809034 (@layer) tokens {
+(@layer) tokens {
 
   :root {
 
     color-scheme: light;
+
     --dark-bg: #1c1814;
+
     --dark-fg: #ede8df;
+
     --dark-muted: #8a7b6e;
+
     --light-bg: #f0ece3;
+
     --light-fg: #0d0d14;
+
     --light-muted: #9a9aaa;
+
     --accent-dark: #d4a84b;
+
     --accent-light: #3a6e00;
+
     --bg: var(--dark-bg);
+
     --fg: var(--dark-fg);
+
     --muted: var(--dark-muted);
+
     --accent: var(--accent-dark);
+
     --font-display: "Bebas Neue", sans-serif;
+
     --font-mono: "DM Mono", monospace;
+
     --hairline: 0.0625rem;
+
     --ui-inset: 2rem;
+
     --card-bg: rgba(28, 24, 20, 0.82);
+
     --card-border: rgba(212, 168, 75, 0.2);
+
     --nav-x: calc(var(--ui-inset) + 0.125rem);
+
     --reveal-offset: 0.625rem;
+
     --reveal-duration: 0.5s;
+
     --z-ui: 10;
 
   }
 
 }
-@id486809034 (@layer) base {
+(@layer) base {
 
   html {
+
     color-scheme: light;
 
   }
@@ -64,36 +92,58 @@
   body {
 
     font-family: var(--font-mono);
+
     overflow-x: hidden;
+
     transition: background 0.3s ease, color 0.3s ease;
-    background: url('https://raw.githubusercontent.com/katerina-svaga/praktoka13/refs/heads/main/i.webp
+
+    background: url('https://raw.githubusercontent.com/Lizaveta-sketch/haha/refs/heads/main/Kate/FON.jpg');
+
   }
 
 }
 (@layer) layout {
+
   #scene {
+
     position: fixed;
+
     inset: 0;
+
     z-index: 0;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     perspective: 1100px;
+
     pointer-events: none;
 
   }
 
   #scroll_container {
+
     position: relative;
+
     margin-left: -250px;
+
     z-index: 999;
+
     
+
   }
 
   section {
+
     min-height: 100vh;
+
     display: flex;
+
     align-items: center;
+
     padding: 6rem calc(5rem + var(--ui-inset)) 6rem 5rem;
 
   }
@@ -102,33 +152,51 @@
 (@layer) cube {
 
   #cube {
+
     --s: min(74vw, 74vh, 560px);
+
     width: var(--s);
+
     height: var(--s);
+
     position: relative;
+
     transform-style: preserve-3d;
+
     transform: rotateX(90deg) rotateY(0deg);
+
     will-change: transform;
 
   }
 
   .face {
+
     position: absolute;
+
     inset: 0;
+
     overflow: hidden;
+
     backface-visibility: hidden;
+
     img {
 
       position: absolute;
+
       inset: 0;
+
       width: 100%;
+
       height: 100%;
+
       object-fit: cover;
+
       display: block;
 
     }
 
     &:has(img) .face-ph {
+
       display: none;
 
     }
@@ -136,43 +204,59 @@
   }
 
   .face-ph {
+
     position: absolute;
+
     bottom: 1.5rem;
+
     left: 1.75rem;
+
     font-family: var(--font-display);
+
     font-size: clamp(2rem, 8vw, 5rem);
+
     letter-spacing: 0.04em;
+
     color: white;
+
     pointer-events: none;
+
     user-select: none;
 
   }
 
   .face[data-face="front"] {
+
     transform: translateZ(calc(var(--s) / 2));
+
   }
 
   .face[data-face="back"] {
+
     transform: rotateY(180deg) translateZ(calc(var(--s) / 2));
 
   }
 
   .face[data-face="right"] {
+
     transform: rotateY(90deg) translateZ(calc(var(--s) / 2));
 
   }
 
   .face[data-face="left"] {
+
     transform: rotateY(-90deg) translateZ(calc(var(--s) / 2));
 
   }
 
   .face[data-face="top"] {
+
     transform: rotateX(-90deg) translateZ(calc(var(--s) / 2));
 
   }
 
   .face[data-face="bottom"] {
+
     transform: rotateX(90deg) translateZ(calc(var(--s) / 2));
 
   }
@@ -181,84 +265,140 @@
 (@layer) ui {
 
   #upbar {
+
     position: fixed;
+
     top: var(--ui-inset);
+
     right: var(--ui-inset);
+
     z-index: var(--z-ui);
+
     text-align: right;
+
     font-size: 0.65rem;
+
     letter-spacing: 0.15em;
+
     color: var(--muted);
+
     text-transform: uppercase;
+
     .progress-bar {
+
       width: 7.5rem;
+
       height: var(--hairline);
+
       background: var(--muted);
+
       margin-block-start: 0.5rem;
-      margin-inline-start: auto;
+
+      margin-inline-start:
+
+
+auto;
+
       position: relative;
+
       overflow: hidden;
 
     }
 
     .progress-fill {
+
       position: absolute;
+
       inset-block: 0;
+
       inset-inline-start: 0;
+
       width: 0%;
-      background: #E0FFFF;
-      transition:
 
+      background: #000080;
 
-width 0.1s linear;
+      transition: width 0.1s linear;
 
     }
+
     .scene-label {
+
       font-size: 0.6rem;
-color: var(--accent);
+
+      color: var(--accent);
+
       margin-block-start: 0.4rem;
+
     }
 
   }
 #face_caption {
+
     position: fixed;
+
     bottom: var(--ui-inset);
+
     left: 50%;
+
     translate: -50% 0;
+
     z-index: var(--z-ui);
+
     text-align: center;
+
     pointer-events: none;
+
     user-select: none;
 
   }
 
   #face_caption_num {
+
     font-size: 0.58rem;
+
     letter-spacing: 0.28em;
+
     color: var(--accent);
+
     text-transform: uppercase;
+
     margin-block-end: 0.15rem;
 
   }
 
   #face_caption_name {
+
     font-family: var(--font-display);
+
     font-size: clamp(1.8rem, 5vw, 3.5rem);
+
     letter-spacing: 0.08em;
+
     color: white;
+
     line-height: 1;
 
   }
   #left-text {
+
     position: fixed;
+
     left: -5%;
+
     top: 50%;
+
     transform: translateY(-50%) rotate(-90deg);
+
     transform-origin: right center;
+
     z-index: var(--z-ui);
+
     font-family: var(--font-mono);
+
     font-size: 0.65rem;
+
     letter-spacing: 0.15em;
+
     text-transform: uppercase;
 
   
@@ -266,6 +406,7 @@ color: var(--accent);
   a {
 
       color: var(--muted);
+
       text-decoration: none;
 
     }  
@@ -274,24 +415,38 @@ color: var(--accent);
 
 } 
 #right-text {
+
     position: fixed;
+
     right: 2%;
+
     top: 50%;
+
     transform: translateY(50%) rotate(90deg);
+
     transform-origin: right center;
+
     z-index: var(--z-ui);
+
     font-family: var(--font-mono);
+
     font-size: 0.65rem;
+
     letter-spacing: 0.15em;
+
     text-transform: uppercase;
 
 }
 (@layer) cards {
 
   .text-card {
+
     max-width: 23.75rem;
+
     padding: 2.25rem 2rem;
+
     background: var(--card-bg);
+
     border-left: var(--hairline) solid var(--card-border);
 
     backdrop-filter: blur(6px) saturate(120%);
@@ -420,8 +575,8 @@ color: var(--accent);
     text-transform: uppercase;
 
     text-decoration: none;
-  
-  color: black
+ 
+ color: black
 
     cursor: pointer;
 
@@ -447,7 +602,8 @@ color: var(--accent);
 
   .button-back {
 
-    display: inline-flex;
+
+display: inline-flex;
 
     align-items: center;
 
@@ -470,20 +626,14 @@ color: var(--accent);
     text-transform: uppercase;
 
     text-decoration: none;
-  
-  color: black
+ 
+ color: black
 
     transition: background 0.2s, color 0.2s, border-color 0.2s;
 
     &:hover {
 
-      background: color-mix(in srgb,
-
-
-
-
-
-var(--muted) 12%, transparent);
+      background: color-mix(in srgb, var(--muted) 12%, transparent);
 
       border-color: var(--muted);
 
@@ -495,7 +645,7 @@ var(--muted) 12%, transparent);
 
       width: 0.6875rem;
 
-height: 0.6875rem;
+      height: 0.6875rem;
 
     }
 
@@ -557,7 +707,7 @@ height: 0.6875rem;
   }
 
 }
-@id486809034 (@layer) theme {
+(@layer) theme {
 
   :root {
 
@@ -626,7 +776,7 @@ height: 0.6875rem;
   }
 
 }
-@id486809034 (@layer) responsive {
+(@layer) responsive {
 
   width <= 56.25em { 
 
